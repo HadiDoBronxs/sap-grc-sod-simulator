@@ -1,0 +1,5 @@
+REPORT GENERATED: 2025-11-23 02:02:24.315346
+COMPLIANCE SCORE: 60.0%
+----------------------------------------
+USER: Max Mueller | RISK: F001 (HIGH)
+USER: Tom Meyer | RISK: M001 (MEDIUM)
