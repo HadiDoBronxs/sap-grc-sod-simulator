@@ -1,0 +1,4 @@
+Role_A,Role_B,Risk_ID,Risk_Level,Description
+Z_FI_PAYMENT_RUN,Z_FI_INVOICE_POST,F001,HIGH,Kritisch: Zahlung und Buchung durch eine Person
+Z_MM_PURCHASE_ORDER,Z_MM_GOODS_RECEIPT,M001,MEDIUM,Wareneingang zu eigener Bestellung buchen
+Z_BASIS_ADMIN,Z_BASIS_USER_ADMIN,B001,CRITICAL,Super-User Rechte missbrauchen

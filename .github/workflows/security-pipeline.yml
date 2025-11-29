@@ -1,0 +1,23 @@
+name: DevSecOps Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install bandit
+
+      - name: Run Bandit (Python Security Scan)
+        # Scannt rekursiv (-r) und zeigt Level Low (-ll) und höher an
+        run: bandit -r . -ll
