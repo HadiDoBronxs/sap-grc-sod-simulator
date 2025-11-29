@@ -16,6 +16,13 @@ Dieses Tool wurde entwickelt, um die Logik von **SAP GRC Access Control (ARA)** 
 * **CSV-Verarbeitung** (Simulation von SAP-Tabellenexporten wie `AGR_USERS`)
 * **Algorithmus:** Mengenbasierter Abgleich (Set Intersection) für O(1) Performance bei Rollen-Checks.
 
+### 🛡️ DevSecOps & Automation
+Dieses Projekt setzt auf **Security by Design**. Eine integrierte CI/CD-Pipeline (GitHub Actions) prüft bei jedem Commit automatisch die Code-Sicherheit.
+
+* **Tool:** [Bandit](https://github.com/PyCQA/bandit) (Python Static Application Security Testing)
+* **Trigger:** Automatischer Scan bei jedem `push` oder `pull_request` auf den Main-Branch.
+* **Ziel:** Frühzeitiges Erkennung von Sicherheitslücken (z.B. Hardcoded Passwords, unsichere Funktionen) im Entwicklungsprozess.
+
 ### 📂 Projektstruktur
 * `sod_checker.py`: Die Hauptlogik (Engine).
 * `users.csv`: Simulierter Export der User-Rollen (Ist-Zustand).
