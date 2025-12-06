@@ -1,39 +1,41 @@
-# SAP GRC SoD Simulator 🛡️
+# 🛡️ Automated Risk Analyzer: Python Compliance Engine
 
-### 🎯 Projektziel
-Dieses Tool wurde entwickelt, um die Logik von **SAP GRC Access Control (ARA)** technisch zu simulieren. Es demonstriert, wie **Segregation of Duties (SoD)**-Prüfungen automatisiert durchgeführt werden können, indem Benutzerberechtigungen gegen eine Risikomatrix abgeglichen werden.
+Ein performantes Python-Tool zur **automatisierten Risiko-Analyse** in großen Datensätzen. Es implementiert logische Prüfverfahren (basierend auf Segregation of Duties), um Konflikte in Berechtigungsstrukturen algorithmisch zu erkennen.
+
+### 🎯 Engineering Goal
+Entwicklung einer leichtgewichtigen, CLI-basierten Engine, die komplexe Compliance-Logik in effizienten Code abbildet, ohne auf schwere Enterprise-Software angewiesen zu sein.
 
 ![Ergebnis Screenshot](execution_result.png)
 
-### 🚀 Features
-* **Risk Analysis Engine:** Identifiziert Konflikte zwischen Benutzerrollen (z.B. *Bestellung* + *Wareneingang*).
-* **Compliance Reporting:** Generiert einen Audit-Report mit Management-Summary und Compliance-Score.
-* **Enterprise Simulation:** Simuliert Ladezeiten und Prozessschritte für eine realistische Terminal-Experience.
-* **Robustes Design:** Enthält Error-Handling, Type Hints und modulare Struktur.
+### 🚀 Key Features
+* **Algorithmic Risk Detection:** Effiziente Erkennung von Konflikten mittels Mengenlehre (Set Operations) statt verschachtelter Schleifen.
+* **Automated Reporting:** Generierung von Audit-Logs und Management-Summaries für Entscheidungsträger.
+* **CI/CD Integration:** Das Projekt demonstriert **DevSecOps**-Prinzipien durch eine integrierte Security-Pipeline (GitHub Actions).
 
-### 🛠 Technologie
-* **Python 3.x** (Keine externen Libraries nötig)
-* **CSV-Verarbeitung** (Simulation von SAP-Tabellenexporten wie `AGR_USERS`)
-* **Algorithmus:** Mengenbasierter Abgleich (Set Intersection) für O(1) Performance bei Rollen-Checks.
+### 🛠 Tech Stack & Performance
+* **Language:** Python 3.x
+* **Data Processing:** Stream-basierte CSV-Verarbeitung für Speichereffizienz.
+* **Algorithm:** Nutzung von Hash-Sets für **O(1) Lookup-Performance** beim Abgleich von Millionen potentieller Berechtigungskombinationen.
 
-### 🛡️ DevSecOps & Automation
-Dieses Projekt setzt auf **Security by Design**. Eine integrierte CI/CD-Pipeline (GitHub Actions) prüft bei jedem Commit automatisch die Code-Sicherheit.
-
-* **Tool:** [Bandit](https://github.com/PyCQA/bandit) (Python Static Application Security Testing)
-* **Trigger:** Automatischer Scan bei jedem `push` oder `pull_request` auf den Main-Branch.
-* **Ziel:** Frühzeitiges Erkennung von Sicherheitslücken (z.B. Hardcoded Passwords, unsichere Funktionen) im Entwicklungsprozess.
+### 🛡️ DevSecOps & Quality Assurance
+Dieses Projekt setzt auf **Security by Design**. Eine GitHub Actions Pipeline prüft jeden Commit automatisch:
+* **Tool:** [Bandit](https://github.com/PyCQA/bandit) (SAST - Static Application Security Testing)
+* **Trigger:** Push/Pull-Request auf Main-Branch.
+* **Ziel:** Automatisierte Einhaltung von Code-Security-Standards.
 
 ### 📂 Projektstruktur
 * `sod_checker.py`: Die Hauptlogik (Engine).
-* `users.csv`: Simulierter Export der User-Rollen (Ist-Zustand).
-* `sod_matrix.csv`: Das Regelwerk / Rule Set (Soll-Zustand).
-* `sod_report.txt`: Der generierte Audit-Bericht.
+* `users.csv`: Simulierte Export-Daten (Ist-Zustand).
+* `sod_matrix.csv`: Konfigurierbare Matrix für Compliance-Regeln (Soll-Zustand).
 
-### 🔮 Future Roadmap (Erweiterungsideen)
-Um dieses Tool in einer produktiven CI/CD-Umgebung einzusetzen, wären folgende Erweiterungen geplant:
-* **Mitigation-Handling:** Implementierung einer Whitelist für genehmigte Ausnahmen.
-* **REST API:** Bereitstellung als Microservice (z.B. mit FastAPI) für Echtzeit-Checks.
-* **Unit Tests:** Automatisierte Tests mit `pytest` für die Prüf-Logik.
+### 🚀 Installation & Usage
 
----
-*Entwickelt als Proof-of-Concept (PoC) für SAP Security Anwendungen.*
+**1. Repository klonen**
+```bash
+git clone [https://github.com/HadiDoBronxs/automated-risk-analyzer.git](https://github.com/DEIN_GITHUB_NAME/automated-risk-analyzer.git)
+cd automated-risk-analyzer
+```
+**2. Engine starten**
+```bash
+python3 sod_checker.py
+```
